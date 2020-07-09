@@ -8,5 +8,13 @@ class SequenceIterator:
 
     def __next__(self):
         """Return the next element,or else raise StopIteration error."""
+        self._k += 1                       #Advance to the neXT index
+        if self._k < len(self._seq):
+            return (self._seq[self._k])    #Return the data element
+        else:
+            raise StopIteration ("No more Elements") #There are no moe elements
 
+    def __iter__(self):
+        """By convention, returns itself as an iterator"""
+        return self
 
