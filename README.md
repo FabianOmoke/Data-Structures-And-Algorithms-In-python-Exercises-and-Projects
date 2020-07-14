@@ -1,6 +1,6 @@
 # Data structures and Algorithms in Python Exercises and Projects
 # Book Exercises as Per topics in the Book in the following folders
-In VENV fOLDER -> 
+# In VENV FOLDER -> 
 # bookExercises ->
 Chapter 1: Python Primer
 chapter 2: OOP
