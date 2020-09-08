@@ -1,21 +1,35 @@
+# Import everything from the tkinter module
 from tkinter import *
 
+# Initializing the Main Window(Container)
 calculator = Tk()
+
+# Assigning our Main Window A title
 calculator.title("Simple Calculator")
 
+# This is the screen that will serve as our display
 inputScreen = Entry(calculator, borderwidth=5, width= 35)
+
+#Positining the input screen on the Tkinter's Window grid
 inputScreen.grid(row=0, column=0, columnspan=3, padx=10, pady= 10)
 
 # ARITHMETIC FUNCTIONS
+""" This are the functions defining the functionality of our calculator"""
+
 def button_click(number):
+    """Displays the numbers pressed"""
+    
     # inputScreen.delete(0,END) # initially for testing purposes
     # inputScreen.insert(0,number) # inserts from the front(0)
     inputScreen.insert(END, number)
 
 def button_clear():
+    """ Clears the input Screen( Display ) """
     inputScreen.delete(0, END)
 
 def button_add():
+    """Specifies addition and automatically captures the previously typed in number"""
+    
     fnum = inputScreen.get()
     global firstNumber
     global math
@@ -24,6 +38,8 @@ def button_add():
     inputScreen.delete(0,END)
 
 def button_equals():
+    """Triggers display of results"""
+    
     seconnd_num = inputScreen.get()
     inputScreen.delete(0,END)
 
@@ -41,6 +57,9 @@ def button_equals():
 
 
 def button_multiply():
+    
+   """Specifies multiplication and automatically captures the previously typed in number"""
+    
     fnum = inputScreen.get()
     global firstNumber
     global math
@@ -50,6 +69,9 @@ def button_multiply():
 
 
 def button_division():
+    
+     """Specifies division and automatically captures the previously typed in number"""
+        
     fnum = inputScreen.get()
     global firstNumber
     global math
@@ -59,6 +81,8 @@ def button_division():
 
 
 def button_subtract():
+    """Specifies subtraction and automatically captures the previously typed in number"""
+        
     fnum = inputScreen.get()
     global firstNumber
     global math
@@ -67,7 +91,7 @@ def button_subtract():
     inputScreen.delete(0, END)
 
 
-# Button declarations grouped as they will appear
+# Button declarations grouped as they will appear on the grid and their respective functions
 buttonOne = Button(calculator, text = "1", padx=40, pady=20, command = lambda: button_click(1))
 buttonTwo = Button(calculator, text = "2", padx=40, pady=20, command = lambda: button_click(2))
 buttonThree = Button(calculator, text = "3", padx=40, pady=20, command = lambda: button_click(3))
@@ -114,9 +138,6 @@ buttonClear.grid(row=4, column=1, columnspan=2)  #spans 2 columns
 buttonSubtract.grid(row=6, column=0)
 buttonMultiply.grid(row=6, column=1)
 buttonDivide.grid(row=6, column=2)
-
-
-
 
 
 
